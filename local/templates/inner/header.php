@@ -37,8 +37,10 @@ $request = \Bitrix\Main\Application::getInstance()->getContext()->getRequest();
 						],
 						false
 				); ?>
+				<?php if ($request->getRequestedPageDirectory() == '/contacts/'): ?>
 				<div class="alert alert-info mt-3">
-					Заключение партнерского договора позволит вам вывести бизнес на новый уровень
+					<?= \Bitrix\Main\Localization\Loc::getMessage("TEMPLATE_INNER_CONTACT_TEXT") ?>
 				</div>
+				<?php endif; ?>
 			</div>
 			<div class="col-12 col-lg-8">
