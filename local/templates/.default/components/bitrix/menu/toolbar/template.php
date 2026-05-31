@@ -37,17 +37,7 @@ $countOpenedItems = 0;
 	<?php endwhile;?>
 
 	<div class="toolbar__li toolbar__li_contact">
-		<?php
-		$APPLICATION->IncludeComponent(
-			"bitrix.academy:phone",
-			"academy",
-			[
-					"HTML_CLASS" => "toolbar__link",
-					"PHONE" => $arParams["PHONE"]
-			],
-			$component
-		);
-		?>
+
 		<span class="ms-3">
 			<?php $APPLICATION->IncludeComponent(
 				"bitrix:main.include",

@@ -61,15 +61,15 @@
 							</div>
 						</div>
 					</div>
-					<div class="header__user">
-						<div class="user-thumbnail">
-							<div class="user-thumbnail__control">
-								<a class="btn btn-primary rounded-pill w-100" role="button" href="/login/">
-									Вход<span class="d-none d-lg-inline"> для дилеров</span>
-								</a>
-							</div>
-						</div>
-					</div>
+					<?$APPLICATION->IncludeComponent(
+							"bitrix:main.auth.form",
+							"header",
+							Array(
+									"AUTH_FORGOT_PASSWORD_URL" => "",
+									"AUTH_REGISTER_URL" => "",
+									"AUTH_SUCCESS_URL" => ""
+							)
+					);?>
 				</div>
 				<?php $APPLICATION->IncludeComponent(
 					"bitrix:menu",
