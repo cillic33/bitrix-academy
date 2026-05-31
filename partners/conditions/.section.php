@@ -1,0 +1,6 @@
+<?
+$sSectionName = "Условия";
+$arDirProperties = Array(
+
+);
+?>
