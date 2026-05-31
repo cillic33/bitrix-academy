@@ -37,10 +37,9 @@ $request = \Bitrix\Main\Application::getInstance()->getContext()->getRequest();
 						],
 						false
 				); ?>
-				<?php if ($request->getRequestedPageDirectory() == '/contacts/'): ?>
+
 				<div class="alert alert-info mt-3">
-					<?= \Bitrix\Main\Localization\Loc::getMessage("TEMPLATE_INNER_CONTACT_TEXT") ?>
+					<?php $APPLICATION->ShowProperty("inner_left_text"); ?>
 				</div>
-				<?php endif; ?>
 			</div>
 			<div class="col-12 col-lg-8">
