@@ -1,4 +1,7 @@
 <?
+$PERM["partners"]["*"]="D";
+$PERM["partners"]["AU"]="R";
+$PERM["partners"]["G5"]="W";
 $PERM["video"]["*"]="R";
 $PERM["online"]["*"]="R";
 $PERM["desktop_app"]["*"]="R";
