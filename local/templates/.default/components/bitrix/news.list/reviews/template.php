@@ -22,7 +22,7 @@ use Bitrix\Main\Localization\Loc;
 						$this->addDeleteAction($review["ID"], $review["DELETE_LINK"], CIBlock::getArrayByID($review["IBLOCK_ID"], "ELEMENT_DELETE"));
 						?>
 						<div id="<?= $this->getEditAreaId($review["ID"]) ?>" class="swiper-reviews__col swiper-slide">
-							<a class="card-review" href>
+							<a class="card-review" href="<?=$review["DISPLAY_PROPERTIES"]["EXTERNAL_LINK"]["VALUE"]?>" target="_blank">
 								<div class="card-review__user">
 									<?php if ($review["FIELDS"]["PREVIEW_PICTURE"]): ?>
 										<div class="card-review__image">
