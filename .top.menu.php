@@ -40,7 +40,7 @@ $aMenuLinks = Array(
 		"/partners/", 
 		Array(), 
 		Array(), 
-		"" 
+		"\$GLOBALS[\"USER\"]->isAuthorized();" 
 	)
 );
 ?>
