@@ -1,6 +1,10 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Мебельная компания");
+global $popularSectionsFilter;
+$popularSectionsFilter = [
+		"UF_SHOW_ON_MAIN" => true,
+];
 ?>
 
 <div class="mb-5 pb-4">
@@ -59,70 +63,42 @@ $APPLICATION->SetTitle("Мебельная компания");
 	</div>
 </div>
 <div class="mb-5 pb-4">
-	<h3 class="mb-4 pb-3">Популярные разделы</h3>
-	<div class="swiper-sections">
-		<div class="swiper-sections__row">
-			<div class=" swiper w-100">
-				<div class="swiper-wrapper">
-					<div class="swiper-sections__col swiper-slide"><a class="catalog-section" href="javascript:void(0)">
-							<div class="image image_size_170x170 text-center">
-								<div class="image__inner">
-									<img class="img img_lazy lazyload"
-											src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-											alt="image"
-											data-src="<?=DEFAULT_TEMPLATE_PATH?>/upload/catalog-sections/0.png">
-								</div>
-							</div>
-							<div class="catalog-section__name">Диваны</div>
-						</a></div>
-					<div class="swiper-sections__col swiper-slide"><a class="catalog-section" href="javascript:void(0)">
-							<div class="image image_size_170x170 text-center">
-								<div class="image__inner">
-									<img class="img img_lazy lazyload"
-											src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-											alt="image"
-											data-src="<?=DEFAULT_TEMPLATE_PATH?>/upload/catalog-sections/1.png">
-								</div>
-							</div>
-							<div class="catalog-section__name">Кресла</div>
-						</a></div>
-					<div class="swiper-sections__col swiper-slide"><a class="catalog-section" href="javascript:void(0)">
-							<div class="image image_size_170x170 text-center">
-								<div class="image__inner">
-									<img class="img img_lazy lazyload"
-											src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-											alt="image"
-											data-src="<?=DEFAULT_TEMPLATE_PATH?>/upload/catalog-sections/2.png">
-								</div>
-							</div>
-							<div class="catalog-section__name">Кровати</div>
-						</a></div>
-					<div class="swiper-sections__col swiper-slide"><a class="catalog-section" href="javascript:void(0)">
-							<div class="image image_size_170x170 text-center">
-								<div class="image__inner">
-									<img class="img img_lazy lazyload"
-											src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-											alt="image"
-											data-src="<?=DEFAULT_TEMPLATE_PATH?>/upload/catalog-sections/3.png">
-								</div>
-							</div>
-							<div class="catalog-section__name">Столы</div>
-						</a></div>
-					<div class="swiper-sections__col swiper-slide"><a class="catalog-section" href="javascript:void(0)">
-							<div class="image image_size_170x170 text-center">
-								<div class="image__inner">
-									<img class="img img_lazy lazyload"
-											src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-											alt="image"
-											data-src="<?=DEFAULT_TEMPLATE_PATH?>/upload/catalog-sections/4.png">
-								</div>
-							</div>
-							<div class="catalog-section__name">Комоды</div>
-						</a></div>
-				</div>
-			</div>
-		</div>
-	</div>
+	<?$APPLICATION->IncludeComponent(
+	"bitrix:catalog.section.list", 
+	"academy", 
+	[
+		"ADDITIONAL_COUNT_ELEMENTS_FILTER" => "additionalCountFilter",
+		"ADD_SECTIONS_CHAIN" => "Y",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"COUNT_ELEMENTS" => "Y",
+		"COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",
+		"FILTER_NAME" => "popularSectionsFilter",
+		"HIDE_SECTIONS_WITH_ZERO_COUNT_ELEMENTS" => "N",
+		"IBLOCK_ID" => "2",
+		"IBLOCK_TYPE" => "products",
+		"SECTION_CODE" => "",
+		"SECTION_FIELDS" => [
+			0 => "",
+			1 => "",
+		],
+		"SECTION_ID" => $_REQUEST["SECTION_ID"],
+		"SECTION_URL" => "",
+		"SECTION_USER_FIELDS" => [
+			0 => "UF_SHOW_ON_MAIN",
+			1 => "",
+		],
+		"SHOW_PARENT_NAME" => "Y",
+		"TOP_DEPTH" => "2",
+		"VIEW_MODE" => "LINE",
+		"COMPONENT_TEMPLATE" => "academy",
+		"RESIZE_IMG_WIDTH" => "170",
+		"RESIZE_IMG_HEIGHT" => "170"
+	],
+	false
+);?>
 </div>
 <div class="mb-5 pb-4">
 	<h3 class="mb-4 pb-3">Хиты продаж</h3>
