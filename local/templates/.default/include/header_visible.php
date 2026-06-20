@@ -42,25 +42,25 @@
 					</div>
 				</div>
 				<div class="header__form">
-					<div class="header__search">
-						<div class="search" data-bs-toggle="dropdown" data-bs-display="static">
-							<div class="search__form"><input class="form-control rounded-pill" id="uniq169564607472865" placeholder="Поиск по сайту" type="text">
-								<div class="search__icon fa-solid fa-magnifying-glass"></div>
-							</div>
-							<div class="search__dropdown dropdown-menu top-0 p-0 m-0">
-								<div class="list-group list-group-flush">
-									<a class="a list-group-item list-group-item-action" href="javascript:void(0)"><b>Диван</b></a>
-									<a class="a list-group-item list-group-item-action" href="javascript:void(0)"><b>Диван</b> угловой</a>
-									<a class="a list-group-item list-group-item-action" href="javascript:void(0)"><b>Диван</b> угловой тканевый</a>
-									<a class="a list-group-item list-group-item-action" href="javascript:void(0)"><b>Диван</b> угловой тканевый Мускари</a>
-									<a class="a list-group-item list-group-item-action" href="javascript:void(0)"><b>Диван</b> угловой тканевый Мускари</a>
-								</div>
-								<div class="p-3 flex-grow-0 flex-shrink-1 text-center">
-									<a class="btn btn-outline-primary rounded-pill w-100" role="button" href="javascript:void(0)">Смотреть все результаты</a>
-								</div>
-							</div>
-						</div>
-					</div>
+					<?$APPLICATION->IncludeComponent(
+							"bitrix:search.title",
+							"",
+							Array(
+									"CATEGORY_0" => array("iblock_products"),
+									"CATEGORY_0_TITLE" => "",
+									"CATEGORY_0_iblock_products" => array("2"),
+									"CHECK_DATES" => "N",
+									"CONTAINER_ID" => "title-search",
+									"INPUT_ID" => "title-search-input",
+									"NUM_CATEGORIES" => "1",
+									"ORDER" => "date",
+									"PAGE" => "#SITE_DIR#search/index.php",
+									"SHOW_INPUT" => "Y",
+									"SHOW_OTHERS" => "N",
+									"TOP_COUNT" => "5",
+									"USE_LANGUAGE_GUESS" => "Y"
+							)
+					);?>
 					<?$APPLICATION->IncludeComponent(
 	"bitrix:main.auth.form", 
 	"header", 

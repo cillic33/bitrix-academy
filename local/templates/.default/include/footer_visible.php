@@ -119,29 +119,22 @@
 			<div class="mt-2 text-muted">ежедневно с 9-00 до 18-00</div>
 		</div>
 	</div>
-	<div class="offcanvas offcanvas-start" id="SIDE_SEARCH">
-		<div class="offcanvas-header ps-0 pt-3 pb-0">
-			<div class="flex-grow-1 pe-3">
-				<div class="search">
-					<div class="search__form"><input class="form-control rounded-pill" id="uniq169564607471910" placeholder="Поиск по сайту" type="text">
-						<div class="search__icon fa-solid fa-magnifying-glass"></div>
-					</div>
-				</div>
-			</div>
-			<div class="offcanvas__btn" data-bs-toggle="offcanvas" data-bs-target="#SIDE_PANEL" role="button">
-				<div class="fa-solid fa-xmark"></div>
-			</div>
-		</div>
-		<div class="offcanvas-body p-0">
-			<div class="list-group list-group-flush">
-				<a class="a list-group-item list-group-item-action" href="javascript:void(0)"><b>Диван</b></a>
-				<a class="a list-group-item list-group-item-action" href="javascript:void(0)"><b>Диван</b> угловой</a>
-				<a class="a list-group-item list-group-item-action" href="javascript:void(0)"><b>Диван</b> угловой тканевый</a>
-				<a class="a list-group-item list-group-item-action" href="javascript:void(0)"><b>Диван</b> угловой тканевый Мускари</a>
-				<a class="a list-group-item list-group-item-action" href="javascript:void(0)"><b>Диван</b> угловой тканевый Мускари</a>
-			</div>
-		</div>
-		<div class="p-3 flex-grow-0 flex-shrink-1 text-center">
-			<a class="btn btn-outline-primary rounded-pill w-100" role="button" href="javascript:void(0)">Смотреть все результаты</a>
-		</div>
-	</div>
+	<?$APPLICATION->IncludeComponent(
+			"bitrix:search.title",
+			"",
+			Array(
+					"CATEGORY_0" => array("iblock_products"),
+					"CATEGORY_0_TITLE" => "",
+					"CATEGORY_0_iblock_products" => array("2"),
+					"CHECK_DATES" => "N",
+					"CONTAINER_ID" => "SIDE_SEARCH",
+					"INPUT_ID" => "title-search-input-mobile",
+					"NUM_CATEGORIES" => "1",
+					"ORDER" => "date",
+					"PAGE" => "#SITE_DIR#search/index.php",
+					"SHOW_INPUT" => "Y",
+					"SHOW_OTHERS" => "N",
+					"TOP_COUNT" => "5",
+					"USE_LANGUAGE_GUESS" => "Y"
+			)
+	);?>
