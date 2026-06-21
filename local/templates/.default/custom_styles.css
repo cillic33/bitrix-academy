@@ -1,0 +1,12 @@
+.card-news-links {
+    margin-top: 30px;
+    display: flex;
+}
+
+.card-news-links .news-previous {
+    margin-right: auto;
+}
+
+.card-news-links .news-next {
+    margin-left: auto;
+}

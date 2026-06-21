@@ -39,3 +39,17 @@ $this->setFrameMode(true);
 	</div>
 	<?=$arResult["FIELDS"]["DETAIL_TEXT"]?>
 <?php endif; ?>
+
+<div class="card-news-links">
+	<?php if ($arResult["PREV"]): ?>
+		<a href="<?=$arResult["PREV"]["DETAIL_PAGE_URL"]?>" class="news-previous btn btn-outline-primary btn-sm rounded-pill">
+			<?=$arResult["PREV"]["SHORT_NAME"]?>
+		</a>
+	<?php endif; ?>
+
+	<?php if ($arResult["NEXT"]): ?>
+		<a href="<?=$arResult["NEXT"]["DETAIL_PAGE_URL"]?>" class="news-next btn btn-outline-primary btn-sm rounded-pill">
+			<?=$arResult["NEXT"]["SHORT_NAME"]?>
+		</a>
+	<?php endif; ?>
+</div>

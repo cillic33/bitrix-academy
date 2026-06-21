@@ -15,6 +15,7 @@ $asset->addString('<meta name="format-detection" content="telephone=no">', false
 $asset->addString('<link rel="shortcut icon" href="'.DEFAULT_TEMPLATE_PATH.'/favicons/favicon.ico" type="image/x-icon">', false, AssetLocation::BEFORE_CSS);
 
 $asset->addCss(DEFAULT_TEMPLATE_PATH."/merged.css");
+$asset->addCss(DEFAULT_TEMPLATE_PATH."/custom_styles.css");
 $asset->addJs(DEFAULT_TEMPLATE_PATH."/merged.js");
 
 $isMainPage = $request->getRequestedPageDirectory() == "/";
